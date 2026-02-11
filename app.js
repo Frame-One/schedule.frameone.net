@@ -340,10 +340,24 @@ function updatePlayhead(wrapper, timeSlots, labelWidth) {
 
 function createEventBlock(evt, timeSlots, eventTz) {
   const startIdx = timeSlots.indexOf(evt.start);
-  const endIdx = timeSlots.indexOf(evt.end);
-  if (startIdx === -1 || endIdx === -1 || endIdx <= startIdx) return null;
+  if (startIdx === -1) return null;
 
   const totalSlots = timeSlots.length;
+  let endIdx = timeSlots.indexOf(evt.end);
+
+  // If end time is beyond the last slot, extend to fill the grid
+  if (endIdx === -1) {
+    const endTime = new Date(evt.end).getTime();
+    const lastSlotTime = new Date(timeSlots[totalSlots - 1]).getTime();
+    if (endTime > lastSlotTime) {
+      endIdx = totalSlots;
+    } else {
+      return null;
+    }
+  }
+
+  if (endIdx <= startIdx) return null;
+
   const leftPct = (startIdx / totalSlots) * 100;
   const widthPct = ((endIdx - startIdx) / totalSlots) * 100;
 

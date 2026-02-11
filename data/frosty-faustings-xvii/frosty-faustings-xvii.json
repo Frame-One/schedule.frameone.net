@@ -1,0 +1,291 @@
+{
+  "eventName": "Frosty Faustings XVII",
+  "weight": 0,
+  "footerText": "FROSTYFAUSTINGS.COM/SCHEDULE",
+  "timezone": "America/Chicago",
+  "days": [
+    {
+      "date": "2025-01-24",
+      "timeSlots": [
+        "2025-01-24T10:00:00-06:00",
+        "2025-01-24T11:00:00-06:00",
+        "2025-01-24T12:00:00-06:00",
+        "2025-01-24T13:00:00-06:00",
+        "2025-01-24T14:00:00-06:00",
+        "2025-01-24T15:00:00-06:00",
+        "2025-01-24T16:00:00-06:00",
+        "2025-01-24T17:00:00-06:00",
+        "2025-01-24T18:00:00-06:00",
+        "2025-01-24T20:00:00-06:00",
+        "2025-01-24T21:00:00-06:00",
+        "2025-01-24T22:00:00-06:00"
+      ],
+      "streams": [
+        {
+          "name": "TampaNeverSleeps",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Guilty Gear Strive", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T14:00:00-06:00", "color": "#7bc67e" },
+            { "game": "Guilty Gear XX AC +R", "phase": "Top 48", "start": "2025-01-24T18:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#7bc67e" },
+            { "game": "Guilty Gear XX AC +R", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#7bc67e" }
+          ]
+        },
+        {
+          "name": "FunkyP",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Guilty Gear XX Accent Core +R", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T15:00:00-06:00", "color": "#e8d44d" },
+            { "game": "Guilty Gear Xrd Rev 2", "icon": "img/GGXRD-R2_Logo.png", "phase": "Pools", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#e8d44d" },
+            { "game": "King of Fighters XV", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#d4a843" }
+          ]
+        },
+        {
+          "name": "JuicyGameNight",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Granblue Fantasy Versus: Rising", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T14:00:00-06:00", "color": "#5bb8e8" },
+            { "game": "Under Night In-Birth II Sys:Celes", "phase": "Pools", "start": "2025-01-24T14:00:00-06:00", "end": "2025-01-24T17:00:00-06:00", "color": "#5bb8e8" },
+            { "game": "Skullgirls", "phase": "Top 8", "start": "2025-01-24T20:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#5bb8e8" },
+            { "game": "Ultimate Marvel vs Capcom 3", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#5bb8e8" }
+          ]
+        },
+        {
+          "name": "LowKickEsports",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Street Fighter 6", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T16:00:00-06:00", "color": "#e85b5b" },
+            { "game": "Melty Blood: TL", "phase": "Top 8", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#e85b5b" },
+            { "game": "Dragon Ball FighterZ", "phase": "Top 8", "start": "2025-01-24T20:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#e85b5b" },
+            { "game": "Melty Blood Actress Again CC", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#e85b5b" }
+          ]
+        },
+        {
+          "name": "UnrivaledTournaments",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Tekken 8", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T15:00:00-06:00", "color": "#f5a623" },
+            { "game": "Blazblue: CF", "phase": "Pools", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#f5a623" },
+            { "game": "Blazblue: CF", "phase": "Top 24", "start": "2025-01-24T20:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#f5a623" },
+            { "game": "Blazblue: CF", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#f5a623" }
+          ]
+        },
+        {
+          "name": "IFCYipes",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Mystery Tournament", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T14:00:00-06:00", "color": "#50c878" },
+            { "game": "U Marvel vs Capcom 3", "phase": "Pools", "start": "2025-01-24T14:00:00-06:00", "end": "2025-01-24T16:00:00-06:00", "color": "#50c878" },
+            { "game": "Marvel vs Capcom 2", "phase": "Top 8", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#50c878" },
+            { "game": "King of Fighters XV", "phase": "Top 24", "start": "2025-01-24T20:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#50c878" },
+            { "game": "Mortal Kombat 1", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#50c878" }
+          ]
+        },
+        {
+          "name": "VampireArcadia",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Melty Blood: TL", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T14:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Vampire Savior", "phase": "Pools", "start": "2025-01-24T14:00:00-06:00", "end": "2025-01-24T16:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Melty Blood AACC", "phase": "Pools", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Melty Blood AACC", "phase": "Top 24", "start": "2025-01-24T20:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Vampire Savior", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#b19cd9" }
+          ]
+        },
+        {
+          "name": "UGSGaming",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "DFCI", "phase": "Top 4", "start": "2025-01-24T11:00:00-06:00", "end": "2025-01-24T13:00:00-06:00", "color": "#c8b98a" },
+            { "game": "EL2", "phase": "Top 4", "start": "2025-01-24T13:00:00-06:00", "end": "2025-01-24T15:00:00-06:00", "color": "#8ab8c8" },
+            { "game": "CCNSOC", "phase": "Top 4", "start": "2025-01-24T15:00:00-06:00", "end": "2025-01-24T17:00:00-06:00", "color": "#c8c88a" },
+            { "game": "PRBFTG", "phase": "Top 4", "start": "2025-01-24T17:00:00-06:00", "end": "2025-01-24T20:00:00-06:00", "color": "#e8a8a8" },
+            { "game": "Puyo Puyo Tetris 2", "phase": "Top 4", "start": "2025-01-24T20:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#e888c8" },
+            { "game": "Rivals of Aether 2", "phase": "Doubles Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#88c8e8" }
+          ]
+        },
+        {
+          "name": "MatchStickMelee",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "KRSCH", "phase": "Top 4", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T13:00:00-06:00", "color": "#d4c4a8" },
+            { "game": "SMS", "phase": "Top 4", "start": "2025-01-24T13:00:00-06:00", "end": "2025-01-24T14:00:00-06:00", "color": "#a8d4c4" },
+            { "game": "TSS", "phase": "Top 4", "start": "2025-01-24T14:00:00-06:00", "end": "2025-01-24T15:00:00-06:00", "color": "#c4a8d4" },
+            { "game": "UFDK", "phase": "Top 4", "start": "2025-01-24T15:00:00-06:00", "end": "2025-01-24T16:00:00-06:00", "color": "#d4a8a8" },
+            { "game": "SvC", "phase": "Top 4", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#a8a8d4" },
+            { "game": "TFH", "phase": "Top 4", "start": "2025-01-24T20:00:00-06:00", "end": "2025-01-24T21:00:00-06:00", "color": "#d4d4a8" },
+            { "game": "STF", "phase": "Top 4", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#a8d4a8" }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-01-25",
+      "timeSlots": [
+        "2025-01-25T10:00:00-06:00",
+        "2025-01-25T11:00:00-06:00",
+        "2025-01-25T12:00:00-06:00",
+        "2025-01-25T13:00:00-06:00",
+        "2025-01-25T14:00:00-06:00",
+        "2025-01-25T15:00:00-06:00",
+        "2025-01-25T16:00:00-06:00",
+        "2025-01-25T17:00:00-06:00",
+        "2025-01-25T18:00:00-06:00",
+        "2025-01-25T19:00:00-06:00",
+        "2025-01-25T20:00:00-06:00",
+        "2025-01-25T21:00:00-06:00"
+      ],
+      "streams": [
+        {
+          "name": "TampaNeverSleeps",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Guilty Gear Strive", "phase": "Top 48", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T13:00:00-06:00", "color": "#7bc67e" },
+            { "game": "Guilty Gear Strive", "phase": "Top 8", "start": "2025-01-25T18:00:00-06:00", "end": "2025-01-25T21:00:00-06:00", "color": "#4da651" }
+          ]
+        },
+        {
+          "name": "FunkyP",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Guilty Gear Xrd Rev 2", "icon": "img/GGXRD-R2_Logo.png", "phase": "Top 8", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T12:00:00-06:00", "color": "#e8d44d" },
+            { "game": "Granblue Fantasy Versus: Rising", "phase": "Top 8", "start": "2025-01-25T13:00:00-06:00", "end": "2025-01-25T15:00:00-06:00", "color": "#c8b43d" },
+            { "game": "Under Night In-Birth II", "phase": "Top 8", "start": "2025-01-25T18:00:00-06:00", "end": "2025-01-25T20:00:00-06:00", "color": "#e8d44d" }
+          ]
+        },
+        {
+          "name": "JuicyGameNight",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Street Fighter 6", "phase": "Top 96", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T14:00:00-06:00", "color": "#5bb8e8" },
+            { "game": "Street Fighter 6", "phase": "Top 8", "start": "2025-01-25T18:00:00-06:00", "end": "2025-01-25T21:00:00-06:00", "color": "#3b98c8" }
+          ]
+        },
+        {
+          "name": "LowKickEsports",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Tekken 8", "phase": "Top 48", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T14:00:00-06:00", "color": "#e85b5b" },
+            { "game": "Tekken 8", "phase": "Top 8", "start": "2025-01-25T18:00:00-06:00", "end": "2025-01-25T21:00:00-06:00", "color": "#c83b3b" }
+          ]
+        },
+        {
+          "name": "UnrivaledTournaments",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Dragon Ball FighterZ", "phase": "Pools", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T14:00:00-06:00", "color": "#f5a623" },
+            { "game": "King of Fighters XV", "phase": "Top 8", "start": "2025-01-25T15:00:00-06:00", "end": "2025-01-25T17:00:00-06:00", "color": "#d58603" },
+            { "game": "Mortal Kombat 1", "phase": "Pools", "start": "2025-01-25T18:00:00-06:00", "end": "2025-01-25T21:00:00-06:00", "color": "#f5a623" }
+          ]
+        },
+        {
+          "name": "IFCYipes",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Marvel vs Capcom 2", "phase": "Pools", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T13:00:00-06:00", "color": "#50c878" },
+            { "game": "Ultimate Marvel vs Capcom 3", "phase": "Pools", "start": "2025-01-25T13:00:00-06:00", "end": "2025-01-25T16:00:00-06:00", "color": "#50c878" },
+            { "game": "Skullgirls", "phase": "Pools", "start": "2025-01-25T16:00:00-06:00", "end": "2025-01-25T18:00:00-06:00", "color": "#30a858" },
+            { "game": "Rivals of Aether 2", "phase": "Top 8", "start": "2025-01-25T19:00:00-06:00", "end": "2025-01-25T21:00:00-06:00", "color": "#50c878" }
+          ]
+        },
+        {
+          "name": "VampireArcadia",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Vampire Savior", "phase": "Top 24", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T12:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Melty Blood: TL", "phase": "Top 24", "start": "2025-01-25T12:00:00-06:00", "end": "2025-01-25T14:00:00-06:00", "color": "#9180b9" },
+            { "game": "Blazblue: CF", "phase": "Top 8 Finals", "start": "2025-01-25T15:00:00-06:00", "end": "2025-01-25T17:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Puyo Puyo Tetris 2", "phase": "Top 8", "start": "2025-01-25T19:00:00-06:00", "end": "2025-01-25T21:00:00-06:00", "color": "#9180b9" }
+          ]
+        },
+        {
+          "name": "UGSGaming",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Them's Fightin' Herds", "phase": "Pools", "start": "2025-01-25T10:00:00-06:00", "end": "2025-01-25T12:00:00-06:00", "color": "#c8b98a" },
+            { "game": "Sonic the Fighters", "phase": "Top 8", "start": "2025-01-25T12:00:00-06:00", "end": "2025-01-25T14:00:00-06:00", "color": "#8ab8c8" },
+            { "game": "Touhou Hisoutensoku", "phase": "Pools", "start": "2025-01-25T15:00:00-06:00", "end": "2025-01-25T17:00:00-06:00", "color": "#c8c88a" },
+            { "game": "DFCI", "phase": "Grand Finals", "start": "2025-01-25T19:00:00-06:00", "end": "2025-01-25T21:00:00-06:00", "color": "#e8a8a8" }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-01-26",
+      "timeSlots": [
+        "2025-01-26T10:00:00-06:00",
+        "2025-01-26T11:00:00-06:00",
+        "2025-01-26T12:00:00-06:00",
+        "2025-01-26T13:00:00-06:00",
+        "2025-01-26T14:00:00-06:00",
+        "2025-01-26T15:00:00-06:00",
+        "2025-01-26T16:00:00-06:00",
+        "2025-01-26T17:00:00-06:00",
+        "2025-01-26T18:00:00-06:00",
+        "2025-01-26T19:00:00-06:00"
+      ],
+      "streams": [
+        {
+          "name": "TampaNeverSleeps",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Guilty Gear Strive", "phase": "Grand Finals", "start": "2025-01-26T14:00:00-06:00", "end": "2025-01-26T17:00:00-06:00", "color": "#4da651" },
+            { "game": "Awards Ceremony", "phase": "", "start": "2025-01-26T18:00:00-06:00", "end": "2025-01-26T19:00:00-06:00", "color": "#ffd700" }
+          ]
+        },
+        {
+          "name": "FunkyP",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Street Fighter 6", "phase": "Grand Finals", "start": "2025-01-26T10:00:00-06:00", "end": "2025-01-26T13:00:00-06:00", "color": "#e8d44d" },
+            { "game": "Tekken 8", "phase": "Grand Finals", "start": "2025-01-26T14:00:00-06:00", "end": "2025-01-26T17:00:00-06:00", "color": "#c8b43d" }
+          ]
+        },
+        {
+          "name": "JuicyGameNight",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Dragon Ball FighterZ", "phase": "Grand Finals", "start": "2025-01-26T10:00:00-06:00", "end": "2025-01-26T12:00:00-06:00", "color": "#5bb8e8" },
+            { "game": "Mortal Kombat 1", "phase": "Grand Finals", "start": "2025-01-26T12:00:00-06:00", "end": "2025-01-26T14:00:00-06:00", "color": "#3b98c8" },
+            { "game": "Under Night In-Birth II", "phase": "Grand Finals", "start": "2025-01-26T15:00:00-06:00", "end": "2025-01-26T17:00:00-06:00", "color": "#5bb8e8" }
+          ]
+        },
+        {
+          "name": "LowKickEsports",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Granblue Fantasy Versus: Rising", "phase": "Grand Finals", "start": "2025-01-26T10:00:00-06:00", "end": "2025-01-26T12:00:00-06:00", "color": "#e85b5b" },
+            { "game": "King of Fighters XV", "phase": "Grand Finals", "start": "2025-01-26T12:00:00-06:00", "end": "2025-01-26T14:00:00-06:00", "color": "#c83b3b" },
+            { "game": "Skullgirls", "phase": "Grand Finals", "start": "2025-01-26T15:00:00-06:00", "end": "2025-01-26T17:00:00-06:00", "color": "#e85b5b" }
+          ]
+        },
+        {
+          "name": "UnrivaledTournaments",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Blazblue: CF", "phase": "Grand Finals", "start": "2025-01-26T10:00:00-06:00", "end": "2025-01-26T12:00:00-06:00", "color": "#f5a623" },
+            { "game": "Marvel vs Capcom 2", "phase": "Grand Finals", "start": "2025-01-26T13:00:00-06:00", "end": "2025-01-26T15:00:00-06:00", "color": "#d58603" },
+            { "game": "Ultimate Marvel vs Capcom 3", "phase": "Grand Finals", "start": "2025-01-26T16:00:00-06:00", "end": "2025-01-26T18:00:00-06:00", "color": "#f5a623" }
+          ]
+        },
+        {
+          "name": "IFCYipes",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Guilty Gear Xrd Rev 2", "icon": "img/GGXRD-R2_Logo.png", "phase": "Grand Finals", "start": "2025-01-26T10:00:00-06:00", "end": "2025-01-26T12:00:00-06:00", "color": "#50c878" },
+            { "game": "Melty Blood: TL", "phase": "Grand Finals", "start": "2025-01-26T12:00:00-06:00", "end": "2025-01-26T14:00:00-06:00", "color": "#30a858" },
+            { "game": "Vampire Savior", "phase": "Grand Finals", "start": "2025-01-26T15:00:00-06:00", "end": "2025-01-26T17:00:00-06:00", "color": "#50c878" }
+          ]
+        },
+        {
+          "name": "VampireArcadia",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Melty Blood AACC", "phase": "Grand Finals", "start": "2025-01-26T10:00:00-06:00", "end": "2025-01-26T12:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Rivals of Aether 2", "phase": "Grand Finals", "start": "2025-01-26T13:00:00-06:00", "end": "2025-01-26T15:00:00-06:00", "color": "#9180b9" },
+            { "game": "Touhou Hisoutensoku", "phase": "Grand Finals", "start": "2025-01-26T16:00:00-06:00", "end": "2025-01-26T18:00:00-06:00", "color": "#b19cd9" }
+          ]
+        }
+      ]
+    }
+  ]
+}

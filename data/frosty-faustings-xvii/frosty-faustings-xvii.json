@@ -1,9 +1,51 @@
 {
   "eventName": "Frosty Faustings XVII",
-  "weight": 0,
+  "weight": 5,
   "footerText": "FROSTYFAUSTINGS.COM/SCHEDULE",
   "timezone": "America/Chicago",
   "days": [
+    {
+      "date": "2025-01-23",
+      "timeSlots": [
+        "2025-01-23T15:00:00-06:00",
+        "2025-01-23T17:00:00-06:00",
+        "2025-01-23T18:00:00-06:00",
+        "2025-01-23T19:00:00-06:00",
+        "2025-01-23T20:00:00-06:00",
+        "2025-01-23T21:00:00-06:00",
+        "2025-01-23T22:00:00-06:00"
+      ],
+      "streams": [
+        {
+          "name": "UGSGaming",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Wonderful World", "phase": "Pools", "start": "2025-01-23T15:00:00-06:00", "end": "2025-01-23T17:00:00-06:00", "color": "#c8b98a" },
+            { "game": "WanWan", "phase": "Top 4", "start": "2025-01-23T17:00:00-06:00", "end": "2025-01-23T18:00:00-06:00", "color": "#c8b98a" },
+            { "game": "Fate Unlimited Codes", "phase": "Pools", "start": "2025-01-23T19:00:00-06:00", "end": "2025-01-23T21:00:00-06:00", "color": "#c8b98a" },
+            { "game": "FUC", "phase": "Top 4", "start": "2025-01-23T21:00:00-06:00", "end": "2025-01-23T22:00:00-06:00", "color": "#c8b98a" }
+          ]
+        },
+        {
+          "name": "MatchStickMelee",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Killer Instinct", "phase": "Pools", "start": "2025-01-23T19:00:00-06:00", "end": "2025-01-23T21:00:00-06:00", "color": "#d4c4a8" },
+            { "game": "KI", "phase": "Top 4", "start": "2025-01-23T21:00:00-06:00", "end": "2025-01-23T22:00:00-06:00", "color": "#a8d4c4" },
+            { "game": "PKM CC", "phase": "Top 4", "start": "2025-01-23T22:00:00-06:00", "end": "2025-01-23T23:00:00-06:00", "color": "#a8d4a8" }
+          ]
+        },
+        {
+          "name": "VampireArcadia",
+          "platform": "twitch.tv",
+          "events": [
+            { "game": "Pokemon Close Combat", "phase": "Pools", "start": "2025-01-23T18:00:00-06:00", "end": "2025-01-23T20:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Vampire Savior", "phase": "Pools", "start": "2025-01-23T20:00:00-06:00", "end": "2025-01-23T22:00:00-06:00", "color": "#b19cd9" },
+            { "game": "Melty Blood AACC", "phase": "Pools", "start": "2025-01-23T22:00:00-06:00", "end": "2025-01-23T23:00:00-06:00", "color": "#b19cd9" }
+          ]
+        }
+      ]
+    },
     {
       "date": "2025-01-24",
       "timeSlots": [
@@ -35,7 +77,7 @@
           "platform": "twitch.tv",
           "events": [
             { "game": "Guilty Gear XX Accent Core +R", "phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T15:00:00-06:00", "color": "#e8d44d" },
-            { "game": "Guilty Gear Xrd Rev 2", "icon": "img/GGXRD-R2_Logo.png", "phase": "Pools", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#e8d44d" },
+            { "game": "Guilty Gear Xrd Rev 2", "icon": "img/ggxrd-rev2.png", "phase": "Pools", "start": "2025-01-24T16:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#e8d44d" },
             { "game": "King of Fighters XV", "phase": "Top 8", "start": "2025-01-24T21:00:00-06:00", "end": "2025-01-24T22:00:00-06:00", "color": "#d4a843" }
           ]
         },

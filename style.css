@@ -100,6 +100,29 @@ body {
   background: #222;
   border-radius: 4px;
   overflow: hidden;
+  position: relative;
+}
+
+.playhead {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #e74c3c;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.playhead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: #e74c3c;
+  border-radius: 50%;
 }
 
 /* Time header row */

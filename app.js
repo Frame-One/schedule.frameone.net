@@ -18,6 +18,7 @@ const ADDITIONAL_TIMEZONES = [
 
 let currentEventData = null;
 let currentDayIndex = 0;
+let playheadInterval = null;
 
 // ── Formatting helpers ──────────────────────────────────────────────
 
@@ -97,7 +98,8 @@ function tzDisplayName(iana) {
 
 function getDateInTz(isoString, timeZone) {
   const dt = new Date(isoString);
-  return dt.toLocaleDateString("en-US", { timeZone, weekday: "short" });
+  const parts = dt.toLocaleDateString("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" });
+  return parts; // returns YYYY-MM-DD, sortable and comparable
 }
 
 // ── Init & loading ──────────────────────────────────────────────────
@@ -173,7 +175,14 @@ async function loadEvent(file) {
     const res = await fetch(file);
     currentEventData = await res.json();
     populateDaySelect(currentEventData.days);
-    currentDayIndex = 0;
+
+    // Default to today's date if it matches a day in the event
+    const today = new Date().toISOString().slice(0, 10);
+    const todayIdx = currentEventData.days.findIndex((d) => d.date === today);
+    currentDayIndex = todayIdx !== -1 ? todayIdx : 0;
+
+    const daySelect = document.getElementById("scheduleSelect");
+    daySelect.value = currentDayIndex;
     renderDay(currentDayIndex);
   } catch (err) {
     console.error("Failed to load schedule:", err);
@@ -191,7 +200,6 @@ function populateDaySelect(days) {
     opt.textContent = formatDate(day.date);
     daySelect.appendChild(opt);
   });
-  daySelect.value = 0;
 }
 
 // ── Rendering ───────────────────────────────────────────────────────
@@ -285,6 +293,49 @@ function renderGrid(data, eventTz) {
     row.appendChild(track);
     wrapper.appendChild(row);
   });
+
+  // Playhead — vertical line showing the current time
+  updatePlayhead(wrapper, timeSlots, labelWidth);
+  if (playheadInterval) clearInterval(playheadInterval);
+  playheadInterval = setInterval(() => {
+    updatePlayhead(wrapper, timeSlots, labelWidth);
+  }, 60000);
+}
+
+function updatePlayhead(wrapper, timeSlots, labelWidth) {
+  // Remove any existing playhead
+  const existing = wrapper.querySelector(".playhead");
+  if (existing) existing.remove();
+
+  if (!timeSlots.length) return;
+
+  const now = Date.now();
+  const slotTimes = timeSlots.map((iso) => new Date(iso).getTime());
+  const firstSlot = slotTimes[0];
+  const lastSlot = slotTimes[slotTimes.length - 1];
+
+  // Only show if "now" is within the grid's time range
+  if (now < firstSlot || now > lastSlot) return;
+
+  // Interpolate position between slots
+  let interpIdx = 0;
+  for (let i = 0; i < slotTimes.length - 1; i++) {
+    if (now >= slotTimes[i] && now <= slotTimes[i + 1]) {
+      const frac = (now - slotTimes[i]) / (slotTimes[i + 1] - slotTimes[i]);
+      interpIdx = i + frac;
+      break;
+    }
+  }
+
+  const totalSlots = timeSlots.length;
+  const pct = (interpIdx / totalSlots) * 100;
+
+  const playhead = document.createElement("div");
+  playhead.className = "playhead";
+  // Position within the time-slots area (after the 180px label column)
+  playhead.style.left = `calc(180px + (100% - 180px) * ${pct / 100})`;
+
+  wrapper.appendChild(playhead);
 }
 
 function createEventBlock(evt, timeSlots, eventTz) {
@@ -349,23 +400,19 @@ function buildTzRow(tz, timeSlots, eventDayName, gridCols, isUserRow) {
     <span class="tz-label-offset">${utcOffset}</span>`;
   row.appendChild(label);
 
-  // Find the first slot index that falls on a different day
+  // Find the first slot index that falls on the NEXT day (after the event day)
   let firstNextDayIdx = -1;
   timeSlots.forEach((iso, i) => {
     const cellDay = getDateInTz(iso, tz.iana);
-    if (cellDay !== eventDayName && firstNextDayIdx === -1) {
+    if (cellDay > eventDayName && firstNextDayIdx === -1) {
       firstNextDayIdx = i;
     }
   });
 
-  // Apply a background gradient on the row if there's a day transition
+  // Apply a background gradient on the row if there's a next-day transition
   if (firstNextDayIdx > 0) {
-    // Calculate percentage where the transition happens (accounting for the label column)
-    // The grid has: label (180px) + N equal-width slots
-    // We use calc() to position the gradient relative to the track area
     const totalSlots = timeSlots.length;
     const transitionSlot = firstNextDayIdx;
-    // Gradient stops as % of the slots area (starts after the label)
     const pctStart = ((transitionSlot - 0.5) / totalSlots) * 100;
     const pctEnd = ((transitionSlot + 0.5) / totalSlots) * 100;
     row.style.background = `linear-gradient(to right, transparent ${pctStart}%, rgba(91, 192, 235, 0.08) ${pctEnd}%)`;
@@ -384,7 +431,7 @@ function buildTzRow(tz, timeSlots, eventDayName, gridCols, isUserRow) {
     const cell = document.createElement("div");
     cell.className = "tz-time-cell";
     const cellDay = getDateInTz(iso, tz.iana);
-    if (cellDay !== eventDayName) {
+    if (cellDay > eventDayName) {
       cell.classList.add("next-day-cell");
     }
     cell.textContent = formatTime(iso, tz.iana);

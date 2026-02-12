@@ -118,7 +118,7 @@ function generateTimeSlots(startTime, endTime) {
     const local = new Date(current + offsetMs);
     const iso = local.toISOString().replace("Z", ""); // local time as ISO without Z
     slots.push(iso.slice(0, 19) + offsetStr);
-    current += 3600000;
+    current += 1800000; // 30 minutes
   }
   return slots;
 }
@@ -281,12 +281,25 @@ function renderGrid(data, eventTz) {
     </div>`;
   headerRow.appendChild(labelCell);
 
-  timeSlots.forEach((iso) => {
+  for (let i = 0; i < timeSlots.length; i++) {
+    const iso = timeSlots[i];
+    const mins = new Date(iso).getMinutes();
     const cell = document.createElement("div");
     cell.className = "time-cell";
-    cell.textContent = formatTime(iso, eventTz);
+    if (mins === 0) {
+      // On-the-hour: span 2 columns if a half-hour slot follows, otherwise 1
+      const hasHalfHour = i + 1 < timeSlots.length && new Date(timeSlots[i + 1]).getMinutes() === 30;
+      if (hasHalfHour) {
+        cell.style.gridColumn = "span 2";
+        i++; // skip the half-hour slot
+      }
+      cell.textContent = formatTime(iso, eventTz);
+    } else {
+      // Standalone half-hour slot (no preceding hour absorbed it)
+      cell.textContent = formatTime(iso, eventTz);
+    }
     headerRow.appendChild(cell);
-  });
+  }
   wrapper.appendChild(headerRow);
 
   // Stream rows
@@ -476,16 +489,27 @@ function buildTzRow(tz, timeSlots, eventDayName, gridCols, isUserRow) {
     row.style.backgroundRepeat = "no-repeat";
   }
 
-  timeSlots.forEach((iso) => {
+  for (let i = 0; i < timeSlots.length; i++) {
+    const iso = timeSlots[i];
+    const mins = new Date(iso).getMinutes();
     const cell = document.createElement("div");
     cell.className = "tz-time-cell";
     const cellDay = getDateInTz(iso, tz.iana);
     if (cellDay > eventDayName) {
       cell.classList.add("next-day-cell");
     }
-    cell.textContent = formatTime(iso, tz.iana);
+    if (mins === 0) {
+      const hasHalfHour = i + 1 < timeSlots.length && new Date(timeSlots[i + 1]).getMinutes() === 30;
+      if (hasHalfHour) {
+        cell.style.gridColumn = "span 2";
+        i++;
+      }
+      cell.textContent = formatTime(iso, tz.iana);
+    } else {
+      cell.textContent = formatTime(iso, tz.iana);
+    }
     row.appendChild(cell);
-  });
+  }
 
   return row;
 }

@@ -47,6 +47,7 @@
       "streams": [
         {
           "name": "TampaNeverSleeps",
+          "logo": "img/stream-tns.png",
           "platform": "twitch.tv",
           "events": [
             { "game": "Guilty Gear Strive", "icon": "img/ggst.png","phase": "Pools", "start": "2025-01-24T10:00:00-06:00", "end": "2025-01-24T18:00:00-06:00", "color": "#7bc67e" },

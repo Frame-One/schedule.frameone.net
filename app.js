@@ -315,8 +315,18 @@ function renderGrid(data, eventTz) {
 
     const label = document.createElement("div");
     label.className = "stream-label";
+    // Determine stream icon: use stream.logo, fall back to twitch.png for Twitch streams
+    let streamIconHtml;
+    if (stream.logo) {
+      streamIconHtml = `<img class="stream-icon" src="${stream.logo}" alt="">`;
+    } else if (platform.includes("twitch.tv")) {
+      streamIconHtml = `<img class="stream-icon" src="img/twitch.png" alt="">`;
+    } else {
+      streamIconHtml = `<div class="stream-icon">IMG</div>`;
+    }
+
     label.innerHTML = `
-      <div class="stream-icon">IMG</div>
+      ${streamIconHtml}
       <div class="stream-info">
         ${streamUrl
           ? `<a class="stream-link" href="${streamUrl}" target="_blank" rel="noopener noreferrer">

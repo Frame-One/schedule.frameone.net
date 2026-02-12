@@ -1,6 +1,5 @@
 const EVENTS = [
   { label: "Frosty Faustings XVII", file: "data/frosty-faustings-xvii/frosty-faustings-xvii.json" },
-  { label: "EVO 2026", file: "data/evo-2026/evo-2026.json" },
   { label: "Template", file: "data/template/template.json" },
 ];
 
@@ -100,6 +99,33 @@ function getDateInTz(isoString, timeZone) {
   const dt = new Date(isoString);
   const parts = dt.toLocaleDateString("en-CA", { timeZone, year: "numeric", month: "2-digit", day: "2-digit" });
   return parts; // returns YYYY-MM-DD, sortable and comparable
+}
+
+function generateTimeSlots(startTime, endTime) {
+  // Parse the UTC offset from the startTime string (e.g., "-06:00")
+  const offsetMatch = startTime.match(/([+-]\d{2}:\d{2})$/);
+  const offsetStr = offsetMatch ? offsetMatch[1] : "Z";
+  const offsetSign = offsetStr[0] === "-" ? -1 : 1;
+  const offsetH = parseInt(offsetStr.slice(1, 3), 10);
+  const offsetM = parseInt(offsetStr.slice(4, 6), 10);
+  const offsetMs = offsetSign * (offsetH * 3600000 + offsetM * 60000);
+
+  const slots = [];
+  let current = new Date(startTime).getTime();
+  const end = new Date(endTime).getTime();
+  while (current < end) {
+    // Compute the local date/time components for this offset
+    const local = new Date(current + offsetMs);
+    const iso = local.toISOString().replace("Z", ""); // local time as ISO without Z
+    slots.push(iso.slice(0, 19) + offsetStr);
+    current += 3600000;
+  }
+  return slots;
+}
+
+function getDayTimeSlots(day) {
+  if (day.timeSlots) return day.timeSlots;
+  return generateTimeSlots(day.startTime, day.endTime);
 }
 
 // ── Init & loading ──────────────────────────────────────────────────
@@ -230,7 +256,8 @@ function renderGrid(data, eventTz) {
   const wrapper = document.getElementById("gridWrapper");
   wrapper.innerHTML = "";
 
-  const { timeSlots, streams } = data;
+  const timeSlots = getDayTimeSlots(data);
+  const { streams } = data;
   const totalSlots = timeSlots.length;
   const labelWidth = "180px";
   const gridCols = `${labelWidth} repeat(${totalSlots}, 1fr)`;
@@ -467,7 +494,7 @@ function renderTimezones(data, eventTz) {
   const section = document.getElementById("timezoneSection");
   section.innerHTML = "";
 
-  const { timeSlots } = data;
+  const timeSlots = getDayTimeSlots(data);
   if (!timeSlots || timeSlots.length === 0) return;
 
   const totalSlots = timeSlots.length;

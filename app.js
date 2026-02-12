@@ -325,18 +325,23 @@ function renderGrid(data, eventTz) {
       streamIconHtml = `<div class="stream-icon">IMG</div>`;
     }
 
-    label.innerHTML = `
-      ${streamIconHtml}
-      <div class="stream-info">
-        ${streamUrl
-          ? `<a class="stream-link" href="${streamUrl}" target="_blank" rel="noopener noreferrer">
-              <span class="stream-platform">${platform}/</span>
-              <span class="stream-name">${stream.name}</span>
-            </a>`
-          : `<span class="stream-platform">${platform || ""}</span>
-             <span class="stream-name">${stream.name}</span>`
-        }
-      </div>`;
+    if (streamUrl) {
+      label.innerHTML = `
+        <a class="stream-link" href="${streamUrl}" target="_blank" rel="noopener noreferrer">
+          ${streamIconHtml}
+          <div class="stream-info">
+            <span class="stream-platform">${platform}/</span>
+            <span class="stream-name">${stream.name}</span>
+          </div>
+        </a>`;
+    } else {
+      label.innerHTML = `
+        ${streamIconHtml}
+        <div class="stream-info">
+          <span class="stream-platform">${platform || ""}</span>
+          <span class="stream-name">${stream.name}</span>
+        </div>`;
+    }
     row.appendChild(label);
 
     const track = document.createElement("div");

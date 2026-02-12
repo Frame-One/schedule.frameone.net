@@ -210,6 +210,14 @@ function renderDay(dayIndex) {
 
   document.getElementById("eventTitle").textContent =
     currentEventData.eventName || "Tournament Schedule";
+
+  const logoEl = document.getElementById("eventLogo");
+  if (currentEventData.logo) {
+    logoEl.innerHTML = `<img src="${currentEventData.logo}" alt="">`;
+  } else {
+    logoEl.innerHTML = "";
+  }
+
   document.getElementById("dayTitle").textContent = formatDate(day.date);
   document.getElementById("siteFooter").textContent =
     currentEventData.footerText || "";

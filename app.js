@@ -1,6 +1,7 @@
 const EVENTS = [
   { label: "Event Name", file: "data/template/template.json" },
   { label: "Frosty Faustings XVII", file: "data/frosty-faustings-xvii/frosty-faustings-xvii.json" },
+  { label: "Genesis X3", file: "data/genesis-x3/genesis-x3.json" },
 ];
 
 const ADDITIONAL_TIMEZONES = [

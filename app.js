@@ -489,18 +489,19 @@ function buildTzRow(tz, timeSlots, eventDayName, gridCols, isUserRow) {
   });
 
   // Apply a background gradient on the row if there's a next-day transition
+  // Use background-image instead of background to avoid overriding user-tz-row background-color
   if (firstNextDayIdx > 0) {
     const totalSlots = timeSlots.length;
     const transitionSlot = firstNextDayIdx;
     const pctStart = ((transitionSlot - 0.5) / totalSlots) * 100;
     const pctEnd = ((transitionSlot + 0.5) / totalSlots) * 100;
-    row.style.background = `linear-gradient(to right, transparent ${pctStart}%, rgba(91, 192, 235, 0.08) ${pctEnd}%)`;
+    row.style.backgroundImage = `linear-gradient(to right, transparent ${pctStart}%, rgba(91, 192, 235, 0.08) ${pctEnd}%)`;
     row.style.backgroundPosition = "180px 0";
     row.style.backgroundSize = "calc(100% - 180px) 100%";
     row.style.backgroundRepeat = "no-repeat";
   } else if (firstNextDayIdx === 0) {
     // All slots are next day
-    row.style.background = `linear-gradient(to right, rgba(91, 192, 235, 0.08), rgba(91, 192, 235, 0.08))`;
+    row.style.backgroundImage = `linear-gradient(to right, rgba(91, 192, 235, 0.08), rgba(91, 192, 235, 0.08))`;
     row.style.backgroundPosition = "180px 0";
     row.style.backgroundSize = "calc(100% - 180px) 100%";
     row.style.backgroundRepeat = "no-repeat";

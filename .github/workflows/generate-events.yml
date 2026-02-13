@@ -1,0 +1,68 @@
+name: Generate Events List
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/**/*.json'
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Generate EVENTS array in app.js
+        run: |
+          python3 << 'SCRIPT'
+          import json, glob, os, re
+
+          # Collect event entries from all JSON files in data subfolders
+          entries = []
+          for filepath in sorted(glob.glob("data/*/*.json")):
+              with open(filepath) as f:
+                  data = json.load(f)
+              name = data.get("eventName", os.path.basename(filepath).replace(".json", ""))
+              first_date = data.get("days", [{}])[0].get("date", "9999-99-99")
+              rel_path = filepath.replace(os.sep, "/")
+              entries.append((first_date, name, rel_path))
+
+          # Sort by first day date
+          entries.sort(key=lambda e: e[0])
+
+          # Build EVENTS lines
+          lines = []
+          for date, name, path in entries:
+              label = name.replace('"', '\\"')
+              lines.append(f'  {{ label: "{label}", file: "{path}" }},')
+
+          new_block = "const EVENTS = [\n" + "\n".join(lines) + "\n];"
+
+          # Replace in app.js
+          with open("app.js", "r") as f:
+              content = f.read()
+
+          content = re.sub(r"const EVENTS = \[.*?\];", new_block, content, flags=re.DOTALL)
+
+          with open("app.js", "w") as f:
+              f.write(content)
+
+          print("Generated EVENTS with", len(entries), "entries:")
+          for date, name, path in entries:
+              print(f"  {date} - {name} ({path})")
+          SCRIPT
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet app.js && echo "changed=false" >> $GITHUB_OUTPUT || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit updated EVENTS
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add app.js
+          git commit -m "chore: regenerate EVENTS list from data folder"
+          git push

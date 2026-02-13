@@ -13,6 +13,30 @@ jobs:
 
       - name: Look for changed json files
         id: changed-files
-        uses: tj-actions/changed-files@47.0.2
+        uses: tj-actions/changed-files@v47.0.2
         with:
           files: data/**/*.json
+
+      - name: Validate changed JSON files
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          errors=0
+          for file in ${ALL_CHANGED_FILES}; do
+            if [ ! -f "$file" ]; then
+              echo "⏭️  Skipped (deleted): $file"
+              continue
+            fi
+            if ! python3 -m json.tool "$file" > /dev/null 2>&1; then
+              echo "❌ Invalid JSON: $file"
+              python3 -m json.tool "$file" 2>&1 | tail -1
+              errors=$((errors + 1))
+            else
+              echo "✅ Valid: $file"
+            fi
+          done
+          if [ $errors -gt 0 ]; then
+            echo ""
+            echo "Found $errors invalid JSON file(s)"
+            exit 1
+          fi

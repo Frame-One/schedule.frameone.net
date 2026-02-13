@@ -6,7 +6,7 @@ on:
 
 jobs:
   generate:
-    if: github.event.label.name == 'lgtm'
+    if: github.event.label.name == 'generate-events'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6

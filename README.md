@@ -92,3 +92,4 @@ A tournament schedule viewer for fighting game events. Displays multi-day, multi
 - All times must include the UTC offset matching the event timezone (e.g. `-05:00` for EST, `-06:00` for CST)
 - Events support half-hour precision (e.g. `T13:30:00`)
 - `endTime` can extend past midnight into the next day (e.g. `2025-01-25T00:00:00-06:00` for a Friday schedule ending at midnight)
+- You can include new logos for games and streams if needed in the `img` folder. The reccommended size for game icons is 64 pixels in height and a flexible width, and stream logos should be around 64x64 pixels.

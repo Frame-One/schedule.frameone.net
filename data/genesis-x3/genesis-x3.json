@@ -59,7 +59,7 @@
           "events": [
             { "game": "Melee", "icon": "img/ssbm.png", "phase": "Round 1 Singles", "start": "2025-02-14T10:00:00-08:00", "end": "2025-02-14T11:30:00-08:00", "color": "#e85b5b" },
             { "game": "Melee", "icon": "img/ssbm.png", "phase": "Round 2 Singles", "start": "2025-02-14T11:30:00-08:00", "end": "2025-02-14T17:30:00-08:00", "color": "#e85b5b" },
-            { "game": "Melee", "icon": "img/ssbm.png", "phase": "Top 64 → Top 8 Singles", "start": "2025-02-14T19:00:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#8b0000" }
+            { "game": "Melee", "icon": "img/ssbm.png", "phase": "Top 64 → Top 8 Singles", "start": "2025-02-14T17:30:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#8b0000" }
           ]
         },
         {
@@ -68,19 +68,19 @@
           "events": [
             { "game": "Ultimate", "phase": "Round 1 Singles", "start": "2025-02-14T10:00:00-08:00", "end": "2025-02-14T11:30:00-08:00", "color": "#2b5ce8" },
             { "game": "Ultimate", "phase": "Round 2 Singles", "start": "2025-02-14T11:30:00-08:00", "end": "2025-02-14T17:30:00-08:00", "color": "#2b5ce8" },
-            { "game": "Ultimate", "phase": "Top 64 → Top 8 Singles", "start": "2025-02-14T19:00:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#1a3ab5" }
+            { "game": "Ultimate", "phase": "Top 64 → Top 8 Singles", "start": "2025-02-14T17:30:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#1a3ab5" }
           ]
         },
         {
           "name": "GenesisGG_3",
           "platform": "twitch.tv",
           "events": [
-            { "game": "Street Fighter 6", "phase": "Round 1 Pools", "start": "2025-02-14T10:00:00-08:00", "end": "2025-02-14T11:30:00-08:00", "color": "#e85b5b" },
-            { "game": "Street Fighter 6", "phase": "Round 2 Pools", "start": "2025-02-14T11:30:00-08:00", "end": "2025-02-14T13:00:00-08:00", "color": "#e85b5b" },
-            { "game": "Street Fighter 6", "phase": "Top 8", "start": "2025-02-14T13:00:00-08:00", "end": "2025-02-14T14:30:00-08:00", "color": "#e85b5b" },
-            { "game": "Umamusume", "phase": "Top 7", "start": "2025-02-14T14:30:00-08:00", "end": "2025-02-14T16:00:00-08:00", "color": "#50c878" },
+            { "game": "Street Fighter 6", "icon": "img/sf6.png", "phase": "Round 1 Pools", "start": "2025-02-14T10:00:00-08:00", "end": "2025-02-14T11:30:00-08:00", "color": "#e85b5b" },
+            { "game": "Street Fighter 6", "icon": "img/sf6.png", "phase": "Round 2 Pools", "start": "2025-02-14T11:30:00-08:00", "end": "2025-02-14T13:00:00-08:00", "color": "#e85b5b" },
+            { "game": "Street Fighter 6", "icon": "img/sf6.png", "phase": "Top 8", "start": "2025-02-14T13:00:00-08:00", "end": "2025-02-14T15:00:00-08:00", "color": "#e85b5b" },
+            { "game": "Umamusume", "phase": "Top 7", "start": "2025-02-14T15:00:00-08:00", "end": "2025-02-14T16:00:00-08:00", "color": "#50c878" },
             { "game": "2XKO", "phase": "Top 24 → Top 8", "start": "2025-02-14T16:00:00-08:00", "end": "2025-02-14T17:30:00-08:00", "color": "#50c878" },
-            { "game": "2XKO", "phase": "Mixed Top 8", "start": "2025-02-14T19:00:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#8b5cf6" }
+            { "game": "2XKO", "phase": "Mixed Top 8", "start": "2025-02-14T17:30:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#8b5cf6" }
           ]
         },
         {
@@ -90,7 +90,7 @@
             { "game": "Guilty Gear Strive", "phase": "Top 8", "start": "2025-02-14T10:00:00-08:00", "end": "2025-02-14T13:00:00-08:00", "color": "#e8d44d" },
             { "game": "Tekken 8", "phase": "Top 8", "start": "2025-02-14T13:00:00-08:00", "end": "2025-02-14T16:00:00-08:00", "color": "#50c878" },
             { "game": "Rivals 1", "phase": "Round 2 Singles", "start": "2025-02-14T16:00:00-08:00", "end": "2025-02-14T17:30:00-08:00", "color": "#f5a623" },
-            { "game": "Rivals 2", "phase": "Top 32 → Top 8 Singles", "start": "2025-02-14T19:00:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#b19cd9" }
+            { "game": "Rivals 2", "phase": "Top 32 → Top 8 Singles", "start": "2025-02-14T17:30:00-08:00", "end": "2025-02-14T22:00:00-08:00", "color": "#b19cd9" }
           ]
         }
       ]
@@ -104,10 +104,10 @@
           "name": "GenesisGG",
           "platform": "twitch.tv",
           "events": [
-            { "game": "Rivals 2", "phase": "Top 8", "start": "2025-02-15T09:00:00-08:00", "end": "2025-02-15T11:30:00-08:00", "color": "#b19cd9" },
-            { "game": "Equipment Change", "phase": "", "start": "2025-02-15T11:30:00-08:00", "end": "2025-02-15T13:00:00-08:00", "color": "#888888" },
-            { "game": "Ultimate", "phase": "Top 8", "start": "2025-02-15T13:00:00-08:00", "end": "2025-02-15T16:00:00-08:00", "color": "#2b5ce8" },
-            { "game": "Melee", "icon": "img/ssbm.png", "phase": "Top 8", "start": "2025-02-15T19:00:00-08:00", "end": "2025-02-15T22:00:00-08:00", "color": "#e85b5b" }
+            { "game": "Rivals 2", "phase": "Top 8", "start": "2025-02-15T09:00:00-08:00", "end": "2025-02-15T12:30:00-08:00", "color": "#b19cd9" },
+            { "game": "Equipment Change", "phase": "", "start": "2025-02-15T12:30:00-08:00", "end": "2025-02-15T13:00:00-08:00", "color": "#888888" },
+            { "game": "Ultimate", "phase": "Top 8", "start": "2025-02-15T13:00:00-08:00", "end": "2025-02-15T17:30:00-08:00", "color": "#2b5ce8" },
+            { "game": "Melee", "icon": "img/ssbm.png", "phase": "Top 8", "start": "2025-02-15T17:30:00-08:00", "end": "2025-02-15T22:00:00-08:00", "color": "#e85b5b" }
           ]
         }
       ]

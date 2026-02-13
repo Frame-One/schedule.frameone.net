@@ -6,7 +6,7 @@
   "timezone": "America/New_York",
   "days": [
     {
-      "date": "2026-05-01",
+      "date": "2026-06-01",
       "startTime": "2025-01-01T10:00:00-05:00",
       "endTime": "2025-01-01T22:00:00-05:00",
       "streams": [

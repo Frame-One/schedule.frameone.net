@@ -1,8 +1,8 @@
 const EVENTS = [
   { label: "Event Name", file: "data/template/template.json" },
   { label: "Frosty Faustings XVII", file: "data/frosty-faustings-xvii/frosty-faustings-xvii.json" },
-  { label: "Event 1Name", file: "data/template copy/template.json" },
   { label: "Event 1Name", file: "data/template copy 2/template.json" },
+  { label: "Event 1Name", file: "data/template copy/template.json" },
 ];
 
 const ADDITIONAL_TIMEZONES = [

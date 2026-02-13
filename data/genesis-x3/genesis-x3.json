@@ -1,5 +1,6 @@
 {
   "eventName": "Genesis X3",
+  "logo": "data/genesis-x3/GX3.png",
   "weight": 1,
   "footerText": "TWITCH.TV/GENESISGG + GENESISGG_2 + GENESISGG_3 + GENESISGG_4 | YOUTUBE.COM/@GENESISGG_",
   "timezone": "America/Los_Angeles",

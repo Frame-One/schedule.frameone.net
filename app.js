@@ -143,11 +143,16 @@ async function init() {
         const data = await res.json();
         const firstDate = data.days && data.days[0] ? data.days[0].date : "9999-12-31";
         const lastDate = data.days && data.days.length ? data.days[data.days.length - 1].date : firstDate;
+        // Use actual start/end timestamps for accurate "running" detection
+        const firstStart = data.days && data.days[0] && data.days[0].startTime
+          ? new Date(data.days[0].startTime).getTime() : Infinity;
+        const lastEnd = data.days && data.days.length && data.days[data.days.length - 1].endTime
+          ? new Date(data.days[data.days.length - 1].endTime).getTime() : -Infinity;
         const weight = data.weight || 0;
         const hidden = data.hidden === true;
-        return { ...e, firstDate, lastDate, weight, hidden };
+        return { ...e, firstDate, lastDate, firstStart, lastEnd, weight, hidden };
       } catch {
-        return { ...e, firstDate: "9999-12-31", lastDate: "9999-12-31", weight: 0, hidden: false };
+        return { ...e, firstDate: "9999-12-31", lastDate: "9999-12-31", firstStart: Infinity, lastEnd: -Infinity, weight: 0, hidden: false };
       }
     })
   );
@@ -163,26 +168,25 @@ async function init() {
     eventSelect.appendChild(opt);
   });
 
-  // Pick default event: closest to today (currently running or next upcoming)
-  const now = new Date();
-  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  // Pick default event using actual event timestamps (not user's local date)
+  const nowMs = Date.now();
   let defaultIdx = 0;
 
-  // First, check if any event is currently running (today is between first and last date inclusive)
+  // First, check if any event is currently running (now is between first startTime and last endTime)
   // If multiple are running, pick the one with the highest weight
   const running = eventMeta
     .map((e, i) => ({ ...e, idx: i }))
-    .filter((e) => e.firstDate <= today && today <= e.lastDate);
+    .filter((e) => nowMs >= e.firstStart && nowMs <= e.lastEnd);
   if (running.length > 0) {
     running.sort((a, b) => b.weight - a.weight);
     defaultIdx = running[0].idx;
   } else {
-    // Otherwise pick the next upcoming event (first date >= today)
-    const upcomingIdx = eventMeta.findIndex((e) => e.firstDate >= today);
+    // Otherwise pick the next upcoming event (starts in the future)
+    const upcomingIdx = eventMeta.findIndex((e) => nowMs < e.firstStart);
     if (upcomingIdx !== -1) {
       defaultIdx = upcomingIdx;
     } else {
-      // All events are in the past — pick the most recent one (last in sorted list)
+      // All events are in the past — pick the most recent one (latest endTime)
       defaultIdx = eventMeta.length - 1;
     }
   }
@@ -204,11 +208,28 @@ async function loadEvent(file) {
     currentEventData = await res.json();
     populateDaySelect(currentEventData.days);
 
-    // Default to today's date if it matches a day in the event
-    const now = new Date();
-    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-    const todayIdx = currentEventData.days.findIndex((d) => d.date === today);
-    currentDayIndex = todayIdx !== -1 ? todayIdx : 0;
+    // Default to the current day based on event schedule times (not user's local date).
+    // Show the last day whose endTime hasn't passed yet, so viewers in later
+    // timezones still see the current day's events until they actually finish.
+    const now = Date.now();
+    const days = currentEventData.days;
+    let dayIdx = 0;
+    for (let i = 0; i < days.length; i++) {
+      const endTime = days[i].endTime
+        ? new Date(days[i].endTime).getTime()
+        : null;
+      const startTime = days[i].startTime
+        ? new Date(days[i].startTime).getTime()
+        : null;
+      if (startTime && now >= startTime) {
+        dayIdx = i;
+      }
+      if (endTime && now < endTime) {
+        dayIdx = i;
+        break;
+      }
+    }
+    currentDayIndex = dayIdx;
 
     const daySelect = document.getElementById("scheduleSelect");
     daySelect.value = currentDayIndex;

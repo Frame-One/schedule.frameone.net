@@ -164,7 +164,8 @@ async function init() {
   });
 
   // Pick default event: closest to today (currently running or next upcoming)
-  const today = new Date().toISOString().slice(0, 10);
+  const now = new Date();
+  const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
   let defaultIdx = 0;
 
   // First, check if any event is currently running (today is between first and last date inclusive)
@@ -204,7 +205,8 @@ async function loadEvent(file) {
     populateDaySelect(currentEventData.days);
 
     // Default to today's date if it matches a day in the event
-    const today = new Date().toISOString().slice(0, 10);
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
     const todayIdx = currentEventData.days.findIndex((d) => d.date === today);
     currentDayIndex = todayIdx !== -1 ? todayIdx : 0;
 
